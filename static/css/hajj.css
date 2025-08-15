@@ -1,0 +1,901 @@
+:root {
+    --dark-green: #0a240a;
+    --gold: #c6a664;
+    --light-beige: #f5f0e4;
+    --dark-brown: #3a2a20;
+    --cream: #fcf8ee;
+    --olive-green: #3c4b23;
+    --gold-light: rgba(198, 166, 100, 0.8);
+    --gold-dark: #b5881e;
+    --green-light: rgba(10, 36, 10, 0.95);
+    --green-darker: #051905;
+    --gold-gradient: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  }
+  
+  body {
+    font-family: 'Amiri', serif;
+    background-color: var(--light-beige);
+    color: var(--dark-brown);
+    scroll-behavior: smooth;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+  }
+  
+  .navbar {
+    background-color: var(--green-light) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    padding: 8px 0;
+    transition: all 0.4s ease;
+    border-bottom: 2px solid var(--gold-light);
+  }
+  
+  .navbar.scrolled {
+    padding: 6px 0;
+    background-color: var(--green-darker) !important;
+    backdrop-filter: blur(8px);
+  }
+  
+  .navbar-brand {
+    color: var(--gold) !important;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    font-family: 'Tajawal', sans-serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navbar-brand .logo-container {
+    position: relative;
+    width: 60px;
+    height: 40px;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar-brand .logo-icon {
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,0.4));
+  }
+  
+  .navbar-brand .kaaba-icon {
+    color: var(--gold);
+    font-size: 1.5rem;
+  }
+  
+  .navbar-brand .moon-icon {
+    color: var(--cream);
+    font-size: 1.2rem;
+    margin-right: 5px;
+  }
+  
+  .navbar-brand:hover .kaaba-icon {
+    transform: rotate(-8deg) scale(1.1);
+  }
+  
+  .navbar-brand:hover .moon-icon {
+    transform: rotate(15deg) scale(1.1);
+  }
+  
+  .nav-link {
+    color: var(--cream) !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 8px;
+    padding: 8px 16px !important;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    position: relative;
+    font-family: 'Tajawal', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    transition: all 0.4s ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--gold) !important;
+    transform: translateY(-3px);
+    text-shadow: 0 0 5px rgba(198, 166, 100, 0.5);
+  }
+  
+  .nav-link:hover::before {
+    width: calc(100% - 40px);
+  }
+  
+  .nav-link.active {
+    background: linear-gradient(135deg, var(--gold-light), rgba(198, 166, 100, 0.5));
+    color: var(--dark-brown) !important;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(198, 166, 100, 0.3);
+  }
+  
+  .nav-link i {
+    margin-left: 10px;
+    font-size: 1em;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-link:hover i {
+    transform: scale(1.2);
+  }
+  
+  .hajj-intro {
+    background: linear-gradient(rgba(10, 36, 10, 0.9), rgba(60, 75, 35, 0.9)), 
+                url('../images/kaaba-wide.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 100px 0;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-bottom: 60px;
+    border-bottom: 2px solid var(--gold);
+  }
+  
+  .hajj-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/islamic-pattern.png') repeat;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+  
+  .hajj-intro h1 {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    background: linear-gradient(to bottom, var(--gold), #e8d9b5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .hajj-intro h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gold-gradient);
+  }
+  
+  .hajj-intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(10, 36, 10, 0.7);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--gold-light);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  
+  .hajj-intro p {
+    font-size: 1.3rem;
+    line-height: 2;
+    margin-bottom: 25px;
+  }
+  
+  .hajj-intro .quran-verse {
+    font-size: 1.8rem;
+    font-family: 'Scheherazade New', serif;
+    color: var(--gold);
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    background: rgba(10, 36, 10, 0.5);
+    border-right: 4px solid var(--gold);
+    position: relative;
+  }
+  
+  .hajj-intro .quran-verse::before,
+  .hajj-intro .quran-verse::after {
+    content: '"';
+    font-size: 4rem;
+    color: var(--gold-light);
+    position: absolute;
+    opacity: 0.3;
+    font-family: 'Amiri', serif;
+  }
+  
+  .hajj-intro .quran-verse::before {
+    top: -15px;
+    right: 20px;
+  }
+  
+  .hajj-intro .quran-verse::after {
+    bottom: -40px;
+    left: 20px;
+  }
+  
+  .verse-reference {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--cream);
+    margin-top: 15px;
+    font-style: italic;
+    font-family: 'Tajawal', sans-serif;
+  }
+  
+  .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--gold-gradient);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 20px rgba(198, 166, 100, 0.4);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .back-to-top:hover {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    transform: translateY(-5px);
+  }
+  
+  .loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-beige);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+  }
+  
+  .loader {
+    width: 80px;
+    height: 80px;
+    border: 8px solid var(--gold);
+    border-top-color: var(--dark-green);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  .hajj-header {
+    background: linear-gradient(rgba(10, 36, 10, 0.85), rgba(10, 36, 10, 0.85)), 
+                url('../images/kaaba-wide.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0 80px;
+    color: white;
+    text-align: center;
+    position: relative;
+  }
+  
+  .hajj-header h1 {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    background: linear-gradient(to bottom, var(--gold), #e8d9b5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .hajj-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gold-gradient);
+  }
+  
+  .hajj-header p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .intro-section {
+    background-color: var(--cream);
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(198, 166, 100, 0.3);
+    border-top: 1px solid rgba(198, 166, 100, 0.3);
+  }
+  
+  .intro-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-right: 4px solid var(--gold);
+  }
+  
+  .intro-card h2 {
+    color: var(--dark-green);
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+  }
+  
+  .intro-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 3px;
+    background: var(--gold-gradient);
+  }
+  
+  .intro-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  .step-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(70, 50, 40, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .step-card .card-header {
+    background-color: white;
+    border-bottom: none;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .step-card .card-header h3 {
+    color: var(--dark-green);
+    font-weight: 700;
+    margin: 0;
+    padding-right: 30px;
+  }
+  
+  .step-card .card-header .step-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: var(--gold-gradient);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  
+  .step-card .card-header .toggle-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    color: var(--gold);
+  }
+  
+  .step-card .card-header.collapsed .toggle-icon {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+  
+  .step-card .card-body {
+    padding: 0 20px 20px;
+    display: none;
+  }
+  
+  .step-card .card-body.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(70, 50, 40, 0.15);
+    border: 1px solid var(--gold-light);
+  }
+  
+  .hajj-types-section {
+    background-color: var(--light-beige);
+    padding: 60px 0;
+    margin: 60px 0;
+  }
+  
+  .type-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    height: 100%;
+    background: white;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(198, 166, 100, 0.3);
+  }
+  
+  .type-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gold-gradient);
+  }
+  
+  .type-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(70, 50, 40, 0.15);
+    border-color: var(--gold);
+  }
+  
+  .type-card .card-body {
+    padding: 30px;
+  }
+  
+  .type-card .card-title {
+    color: var(--dark-green);
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+    font-family: 'Tajawal', sans-serif;
+  }
+  
+  .type-card .card-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--gold);
+  }
+  
+  .type-card .type-badge {
+    background-color: rgba(198, 166, 100, 0.1);
+    color: var(--dark-brown);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .tips-section {
+    padding: 60px 0;
+    background-color: var(--cream);
+  }
+  
+  .tips-tabs {
+    border: none;
+    margin-bottom: 30px;
+  }
+  
+  .tips-tabs .nav-link {
+    border: none;
+    color: var(--dark-brown);
+    font-weight: 600;
+    padding: 12px 25px;
+    margin: 0 5px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-family: 'Tajawal', sans-serif;
+  }
+  
+  .tips-tabs .nav-link.active {
+    background: var(--gold-gradient);
+    color: white;
+  }
+  
+  .tips-tabs .nav-link:hover:not(.active) {
+    background-color: rgba(198, 166, 100, 0.1);
+  }
+  
+  .tip-content {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-right: 4px solid var(--gold);
+  }
+  
+  .tip-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed rgba(198, 166, 100, 0.3);
+  }
+  
+  .tip-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  .tip-item h4 {
+    color: var(--dark-green);
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .tip-item h4 i {
+    color: var(--gold);
+    margin-left: 10px;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Tajawal', sans-serif;
+    color: var(--dark-green);
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gold-gradient);
+  }
+  
+  .dropdown-menu {
+    font-family: 'Amiri', serif;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: var(--green-darker);
+    border: 1px solid var(--gold-light);
+  }
+  
+  .dropdown-item {
+    padding: 10px 20px;
+    transition: all 0.2s;
+    color: var(--cream);
+    font-size: 1.1rem;
+  }
+  
+  .dropdown-item:hover {
+    background-color: rgba(198, 166, 100, 0.2);
+    color: var(--gold);
+    padding-right: 25px;
+  }
+  
+  .dropdown-divider {
+    border-color: rgba(198, 166, 100, 0.3);
+  }
+  
+  .dua-section {
+    background-color: var(--cream);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    border-right: 4px solid var(--gold);
+  }
+  
+  .dua-title {
+    color: var(--dark-green);
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .dua-title i {
+    margin-left: 10px;
+    color: var(--gold);
+  }
+  
+  .dua-text {
+    font-size: 1.3rem;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-family: 'Scheherazade New', serif;
+    color: var(--dark-green);
+    position: relative;
+    padding-right: 30px;
+  }
+  
+  .dua-text::before {
+    content: '"';
+    position: absolute;
+    right: 0;
+    top: -15px;
+    font-size: 3.5rem;
+    color: var(--gold-light);
+    font-family: 'Amiri', serif;
+    line-height: 1;
+  }
+  
+  .dua-text::after {
+    content: '"';
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    font-size: 3.5rem;
+    color: var(--gold-light);
+    font-family: 'Amiri', serif;
+    line-height: 1;
+  }
+  
+  .dua-reference {
+    font-style: italic;
+    color: var(--olive-green);
+    text-align: left;
+    font-family: 'Tajawal', sans-serif;
+    background: rgba(10, 36, 10, 0.1);
+    padding: 8px 15px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .dua-container:hover .dua-reference {
+    background: rgba(198, 166, 100, 0.2);
+    color: var(--dark-green);
+  }
+  
+  .copy-btn {
+    background: var(--gold-gradient);
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-family: 'Tajawal', sans-serif;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(198, 166, 100, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .copy-btn:hover {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(198, 166, 100, 0.4);
+  }
+  
+  .copy-btn i {
+    margin-left: 8px;
+  }
+  
+  .share-btn {
+    position: fixed;
+    bottom: 100px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--gold-gradient);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 99;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(198, 166, 100, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .share-btn:hover {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    transform: translateY(-3px);
+  }
+  
+  .progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: transparent;
+    z-index: 1000;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background: var(--gold-gradient);
+    width: 0%;
+    transition: width 0.1s ease;
+  }
+  
+  .map-container {
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 30px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid var(--gold);
+  }
+  
+  .map-title {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--dark-green);
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  
+  .map-description {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--dark-brown);
+    font-size: 1.1rem;
+  }
+  
+  .map-legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  
+  .map-legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 15px 10px;
+  }
+  
+  .map-legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 8px;
+  }
+  
+  footer {
+    background: var(--green-darker) !important;
+    color: var(--cream);
+    border-top: 2px solid var(--gold);
+  }
+  
+  footer a {
+    color: var(--gold) !important;
+    transition: all 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: var(--cream) !important;
+    text-decoration: none;
+  }
+  
+  footer .social-icons a {
+    color: var(--cream) !important;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(198, 166, 100, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  footer .social-icons a:hover {
+    background: var(--gold);
+    transform: translateY(-3px);
+  }
+  
+  .subscribe-form {
+    position: relative;
+  }
+  
+  .subscribe-form .form-control {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+  }
+  
+  .subscribe-form .form-control::placeholder {
+    color: rgba(255,255,255,0.6);
+  }
+  
+  .subscribe-form .btn {
+    background: var(--gold-gradient);
+    border: none;
+  }
+  
+  @media (max-width: 768px) {
+    .hajj-header {
+      padding: 80px 0 50px;
+    }
+    
+    .hajj-header h1 {
+      font-size: 2rem;
+    }
+    
+    .type-card .card-body {
+      padding: 20px;
+    }
+    
+    .tips-tabs .nav-link {
+      padding: 10px 15px;
+      font-size: 0.9rem;
+    }
+    
+    .back-to-top, .share-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+      bottom: 20px;
+      left: 20px;
+    }
+    
+    .share-btn {
+      bottom: 80px;
+    }
+    
+    .map-container {
+      height: 350px;
+    }
+    
+    .dua-text {
+      font-size: 1.2rem;
+    }
+    
+    .intro-card {
+      padding: 20px;
+    }
+  }

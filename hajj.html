@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مناسك الحج - بوابة الحج والعمرة</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="static/css/hajj.css">
+</head>
+
+<body>
+  <div class="loader-wrapper" id="loader">
+    <div class="loader"></div>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="logo-container">
+          <i class="fas fa-moon logo-icon moon-icon"></i>
+          <i class="fas fa-kaaba logo-icon kaaba-icon"></i>
+        </span>
+        بوابة الحج والعمرة
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="hajj.html"><i class="fas fa-kaaba"></i> الحج</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="umrah.html"><i class="fas fa-mosque"></i> العمرة</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="salat.html"><i class="fas fa-clock"></i> مواقيت الصلاة</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+              <i class="fas fa-hands-praying"></i> الأدعية
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="doaa.html#dua-ihram"><i class="fas fa-kaaba me-2"></i>أدعية الإحرام</a></li>
+              <li><a class="dropdown-item" href="doaa.html#dua-tawaf"><i class="fas fa-people-arrows me-2"></i>أدعية الطواف</a></li>
+              <li><a class="dropdown-item" href="doaa.html#dua-arafah"><i class="fas fa-mountain me-2"></i>أدعية عرفة</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="doaa.html#quran-ayahs"><i class="fas fa-quran me-2"></i>آيات الحج</a></li>
+              <li><a class="dropdown-item" href="doaa.html#hadiths"><i class="fas fa-book-hadith me-2"></i>أحاديث الحج</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hajj-intro">
+    <div class="container">
+      <h1 class="animate__animated animate__fadeInDown">فريضة الحج</h1>
+      <div class="hajj-intro-content animate__animated animate__fadeInUp animate__delay-1s">
+        <p>الحج هو الركن الخامس من أركان الإسلام، وهو فرض عين على كل مسلم بالغ عاقل قادر مرة واحدة في العمر. قال تعالى: <strong>"وَلِلَّهِ عَلَى النَّاسِ حِجُّ الْبَيْتِ مَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلًا"</strong> (آل عمران: 97).</p>
+        
+        <p>الحج مدرسة تربوية عظيمة تذكر المسلم بيوم القيامة، حيث يجتمع المؤمنون من كل حدب وصوب، متجردين من زينة الدنيا، متساوين في اللباس والهيئة، لا فرق بين غني وفقير، ولا بين أبيض وأسود إلا بالتقوى والعمل الصالح.</p>
+        
+        <div class="quran-verse animate__animated animate__fadeIn animate__delay-2s">
+          وَأَذِّن فِي النَّاسِ بِالْحَجِّ يَأْتُوكَ رِجَالًا وَعَلَىٰ كُلِّ ضَامِرٍ يَأْتِينَ مِن كُلِّ فَجٍّ عَمِيقٍ
+          <span class="verse-reference">سورة الحج - الآية 27</span>
+        </div>
+        
+        <p>الحج عبادة تجمع بين الجوانب المادية والمالية والبدنية، فهو اختبار للإيمان والصبر، وتجرد من الدنيا وزينتها، وتوحيد لله تعالى في القول والعمل. وهو فرصة عظيمة لتطهير النفس من الذنوب والخطايا، حيث قال النبي ﷺ: <strong>"من حج لله فلم يرفث ولم يفسق رجع كيوم ولدته أمه"</strong> (متفق عليه).</p>
+        
+        <p>في هذا القسم سنتعرف على مناسك الحج خطوة بخطوة، وفق ما جاء في الكتاب والسنة، مع بيان الأدعية والأذكار المطلوبة في كل منسك، بالإضافة إلى الخرائط التوضيحية والنصائح الهامة لأداء الحج على أكمل وجه.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="container my-5">
+    <section class="intro-section">
+      <div class="container">
+        <div class="intro-card animate__animated animate__fadeIn">
+          <h2>الحج: ركن الإسلام الخامس</h2>
+          <p>الحج هو الركن الخامس من أركان الإسلام، وهو فريضة على كل مسلم بالغ عاقل قادر على أدائه مرة واحدة في العمر. قال تعالى: <strong>"وَلِلَّهِ عَلَى النَّاسِ حِجُّ الْبَيْتِ مَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلًا"</strong> (آل عمران: 97).</p>
+          
+          <p>الحج مدرسة تربوية عظيمة تذكر المسلم بيوم القيامة، وتوحده مع إخوانه المسلمين في مشاعر واحدة ولباس واحد، وتجرده من الدنيا وزينتها، وتذكره بحال الآخرة. وهو فرصة عظيمة لتطهير النفس من الذنوب والخطايا، حيث قال النبي ﷺ: <strong>"من حج لله فلم يرفث ولم يفسق رجع كيوم ولدته أمه"</strong> (متفق عليه).</p>
+          
+          <p>يؤدي الحجاج مناسك الحج في مكة المكرمة والمواقع المحيطة بها خلال الأيام العشرة الأولى من شهر ذي الحجة، حيث يبدأون بالإحرام من الميقات، ثم يتوجهون إلى مكة لأداء الطواف والسعي، ثم إلى منى وعرفة ومزدلفة، ثم يعودون إلى مكة لإكمال بقية المناسك.</p>
+          
+          <div class="alert alert-light mt-4">
+            <strong>الحكمة من الحج:</strong> الحج يمثل وحدة الأمة الإسلامية، ويذكر بالمساواة بين البشر، ويجسد الخضوع لله تعالى، ويربي النفس على الصبر والتحمل، ويجدد الإيمان، ويطهر من الذنوب.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hajj-types-section">
+      <div class="container">
+        <h2 class="section-title animate__animated animate__fadeIn">أنواع الحج</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
+            <div class="type-card h-100">
+              <div class="card-body">
+                <span class="type-badge"><i class="fas fa-star me-2"></i>الأفضل للحجاج</span>
+                <h3 class="card-title">حج التمتع</h3>
+                <p>التمتع هو أن يؤدي الحاج العمرة أولًا في أشهر الحج، ثم بعد أن ينتهي من العمرة، يُحرم بالحج في نفس السنة.</p>
+                <h5 class="mt-4">الخطوات:</h5>
+                <ol>
+                  <li>الإحرام من الميقات بنية العمرة</li>
+                  <li>أداء مناسك العمرة (الطواف، السعي، الحلق)</li>
+                  <li>الإحرام مرة أخرى للحج في اليوم الثامن</li>
+                  <li>أداء مناسك الحج</li>
+                </ol>
+                <div class="alert alert-light mt-3">
+                  <strong>ملاحظة:</strong> هذا النوع أفضل للحجاج القادمين من خارج مكة
+                </div>
+                <div class="alert alert-light mt-3">
+                  <strong>الحديث:</strong> "دخلت العمرة في الحج إلى يوم القيامة" (رواه مسلم)
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
+            <div class="type-card h-100">
+              <div class="card-body">
+                <span class="type-badge"><i class="fas fa-link me-2"></i>إحرام واحد</span>
+                <h3 class="card-title">حج القران</h3>
+                <p>القران هو أن يؤدي الحاج العمرة والحج معًا في نفس الإحرام. أي أنه يدخل في الإحرام بنية العمرة والحج معًا، ولا يفصل بينهما.</p>
+                <h5 class="mt-4">الخطوات:</h5>
+                <ol>
+                  <li>الإحرام من الميقات بنية العمرة والحج معًا</li>
+                  <li>أداء مناسك العمرة</li>
+                  <li>البقاء في الإحرام حتى أداء مناسك الحج</li>
+                  <li>أداء مناسك الحج</li>
+                </ol>
+                <div class="alert alert-light mt-3">
+                  <strong>ملاحظة:</strong> هذا النوع يحتاج إلى استمرار الإحرام طوال فترة الحج
+                </div>
+                <div class="alert alert-light mt-3">
+                  <strong>الحديث:</strong> "أحرم النبي صلى الله عليه وسلم بالحج والعمرة جميعاً" (رواه البخاري)
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4 animate__animated animate__fadeInRight">
+            <div class="type-card h-100">
+              <div class="card-body">
+                <span class="type-badge"><i class="fas fa-user me-2"></i>لأهل مكة</span>
+                <h3 class="card-title">حج المفرد</h3>
+                <p>المفرد هو أن يؤدي الحاج الحج فقط دون أداء العمرة في نفس الوقت.</p>
+                <h5 class="mt-4">الخطوات:</h5>
+                <ol>
+                  <li>الإحرام من الميقات بنية الحج فقط</li>
+                  <li>أداء مناسك الحج مباشرة</li>
+                  <li>لا يشمل أداء العمرة</li>
+                </ol>
+                <div class="alert alert-light mt-3">
+                  <strong>ملاحظة:</strong> هذا النوع شائع لأهل مكة والقريبين منها
+                </div>
+                <div class="alert alert-light mt-3">
+                  <strong>الآية:</strong> "وَأَتِمُّوا الْحَجَّ وَالْعُمْرَةَ لِلَّهِ" (البقرة: 196)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-5">
+      <h2 class="section-title animate__animated animate__fadeIn">خطوات الحج بالتفصيل</h2>
+      
+      <div class="step-card animate__animated animate__fadeInUp">
+        <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#step1">
+          <span class="step-number">1</span>
+          <h3>الإحرام من الميقات</h3>
+          <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div id="step1" class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="../images/ihram.jpg" class="img-fluid rounded mb-3" alt="الإحرام">
+            </div>
+            <div class="col-md-8">
+              <p>الإحرام هو أول خطوة في الحج، حيث يدخل الحاج في حالة من الطهارة والنية. الميقات هو المكان الذي يُحرم منه الحاج، وهناك خمس أماكن معروفة للمواقيت:</p>
+              <ul>
+                <li>ذو الحليفة (لأهل المدينة)</li>
+                <li>الجحفة (لأهل الشام)</li>
+                <li>قرن المنازل (لأهل نجد)</li>
+                <li>يلملم (لأهل اليمن)</li>
+                <li>ذات عرق (لأهل العراق)</li>
+              </ul>
+              
+              <div class="dua-section" id="dua-ihram">
+                <h4 class="dua-title"><i class="fas fa-hands-praying"></i> أدعية الإحرام</h4>
+                <p class="dua-text">"لبيك اللهم حجاً، لبيك اللهم لبيك، لبيك لا شريك لك لبيك، إن الحمد والنعمة لك والملك، لا شريك لك"</p>
+                <p class="dua-reference">(دعاء الإحرام المشهور)</p>
+                
+                <p class="dua-text">"اللهم إني أريد الحج فيسره لي وتقبله مني، اللهم اجعلني من عبادك الصالحين"</p>
+                
+                <p class="dua-text">"اللهم هذه حجة لا رياء فيها ولا سمعة، اللهم تقبلها مني واغفر لي ذنوبي"</p>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+              </div>
+              
+              <div class="alert alert-light mt-3">
+                <strong>النية:</strong> بعد ارتداء ملابس الإحرام، يقوم الحاج بالتوجه إلى الله بنية أداء الحج ويقول: "لبيك حجاً".
+              </div>
+              <div class="alert alert-light mt-3">
+                <strong>الآية:</strong> "وَأَذِّنْ فِي النَّاسِ بِالْحَجِّ يَأْتُوكَ رِجَالًا وَعَلَى كُلِّ ضَامِرٍ يَأْتِينَ مِنْ كُلِّ فَجٍّ عَمِيقٍ" (الحج: 27)
+              </div>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-book-hadith"></i> أحاديث الإحرام</h4>
+                <p class="dua-text">قال رسول الله ﷺ: "من أحرم بالحج من الميقات، وقام بما يجب عليه، فقد تم حجه"</p>
+                <p class="dua-reference">(رواه البخاري)</p>
+                
+                <p class="dua-text">عن ابن عمر رضي الله عنهما قال: "كان رسول الله ﷺ إذا استوت به راحلته قائمة عند مسجد ذي الحليفة أهل فقال: لبيك اللهم لبيك..."</p>
+                <p class="dua-reference">(متفق عليه)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="step-card animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#step2">
+          <span class="step-number">2</span>
+          <h3>طواف القدوم</h3>
+          <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div id="step2" class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="../images/tawaf.jpg" class="img-fluid rounded mb-3" alt="الطواف">
+            </div>
+            <div class="col-md-8">
+              <p>بعد الوصول إلى مكة، يؤدي الحاج طواف القدوم حول الكعبة المشرفة سبعة أشواط.</p>
+              <ul>
+                <li>الطواف يتكون من سبعة أشواط</li>
+                <li>يبدأ الطواف من الحجر الأسود (يُستحب أن يُقبل إذا كان ممكنًا أو الإشارة إليه إذا لم يكن هناك استطاعة)</li>
+                <li>أثناء الطواف، يجب أن يتوجه الحاج نحو الكعبة ويكثر من الدعاء، والتكبير، والذكر</li>
+                <li>الرمل للرجال في الأشواط الثلاثة الأولى (الإسراع في المشي)</li>
+              </ul>
+              
+              <div class="dua-section" id="dua-tawaf">
+                <h4 class="dua-title"><i class="fas fa-dua"></i> أدعية الطواف</h4>
+                <p class="dua-text">"سبحان الله، والحمد لله، ولا إله إلا الله، والله أكبر، ولا حول ولا قوة إلا بالله العلي العظيم"</p>
+                
+                <p class="dua-text">"اللهم إني أسألك باسمك العظيم، وبوجهك الكريم، أن تغفر لي ذنوبي، وتقبل طوافي، وتجعلني من عبادك الصالحين"</p>
+                
+                <p class="dua-text">عند الحجر الأسود: "بسم الله، الله أكبر، اللهم إيماناً بك، وتصديقاً بكتابك، ووفاءً بعهدك، واتباعاً لسنة نبيك محمد ﷺ"</p>
+                
+                <p class="dua-text">بين الركن اليماني والحجر الأسود: "ربنا آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار"</p>
+                <p class="dua-reference">(سورة البقرة، الآية 201)</p>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+              </div>
+              
+              <div class="alert alert-light mt-3">
+                <strong>الحديث:</strong> "مَن طافَ بالبيتِ سبعًا وصلى ركعتينِ كان كفارةً لذنوبه" (رواه الترمذي).
+              </div>
+              
+              <div class="dua-section" id="quran-ayahs">
+                <h4 class="dua-title"><i class="fas fa-quran"></i> آيات الطواف</h4>
+                <p class="dua-text">"وَلْيَطَّوَّفُوا بِالْبَيْتِ الْعَتِيقِ" (سورة الحج، الآية 29)</p>
+                
+                <p class="dua-text">"ثُمَّ لْيَقْضُوا تَفَثَهُمْ وَلْيُوفُوا نُذُورَهُمْ وَلْyَطَّوَّفُوا بِالْبَيْتِ الْعَتِيقِ" (سورة الحج، الآية 29)</p>
+              </div>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-book-hadith"></i> أحاديث الطواف</h4>
+                <p class="dua-text">قال رسول الله ﷺ: "الطواف بالبيت صلاة، إلا أن الله أحل فيه الكلام، فمن تكلم فلا يتكلم إلا بخير"</p>
+                <p class="dua-reference">(رواه الترمذي وحسنه)</p>
+                
+                <p class="dua-text">عن ابن عباس رضي الله عنهما قال: قال رسول الله ﷺ: "الحجر الأسود من الجنة، وكان أشد بياضاً من الثلج حتى سودته خطايا بني آدم"</p>
+                <p class="dua-reference">(رواه الترمذي وقال: حسن صحيح)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="step-card animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#step3">
+          <span class="step-number">3</span>
+          <h3>السعي بين الصفا والمروة</h3>
+          <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div id="step3" class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="../images/saee.jpg" class="img-fluid rounded mb-3" alt="السعي">
+            </div>
+            <div class="col-md-8">
+              <p>بعد الطواف، يجب على الحاج أداء السعي بين الصفا والمروة. السعي يتكون من سبعة أشواط.</p>
+              <ul>
+                <li>يبدأ السعي من الصفا، حيث يُستحب أن يرفع الحاج يديه ويتوجه بالدعاء: "اللهم إني أسالك من فضلك"</li>
+                <li>يواصل الحاج السعي بين الصفا والمروة حتى يصل إلى المروة. وعندما يصل إلى المروة، يُستحب أن يدعو</li>
+                <li>عند العودة من المروة إلى الصفا، يتكرر ذلك حتى يتم السعي سبعة أشواط</li>
+                <li>الهرولة بين العلمين الأخضرين للرجال فقط</li>
+              </ul>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-pray"></i> أدعية السعي</h4>
+                <p class="dua-text">عند الصعود على الصفا: "إِنَّ الصَّفَا وَالْمَرْوَةَ مِن شَعَائِرِ اللَّهِ فَمَنْ حَجَّ الْبَيْتَ أَوِ اعْتَمَرَ فَلَا جُنَاحَ عَلَيْهِ أَن يَطَّوَّفَ بِهِمَا"</p>
+                <p class="dua-reference">(سورة البقرة، الآية 158)</p>
+                
+                <p class="dua-text">"أبدأ بما بدأ الله به، اللهم ارحم واغفر إنك تعلم سري وعلانيتي، فاقبل معذرتي، وتعلم حاجتي، وتعلم ما في نفسي، اللهم إني أسألك إيماناً يباشر قلبي، ويقيناً صادقاً حتى أعلم أنه لا يصيبني إلا ما كتبت لي"</p>
+                
+                <p class="dua-text">"اللهم اغفر وارحم، واعف عما تعلم، إنك أنت الأعز الأكرم، اللهم آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار"</p>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+              </div>
+              
+              <div class="alert alert-light mt-3">
+                <strong>الآية:</strong> "إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ فَمَن حَجَّ الْبَيْتَ أَوْ اعْتَمَرَ فَلَا جُنَاحَ عَلَيْهِ أَنْ يَطَّوَّفَ بِهِمَا" (سورة البقرة، الآية 158).
+              </div>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-book-hadith"></i> أحاديث السعي</h4>
+                <p class="dua-text">قال رسول الله ﷺ: "اسعوا فإن الله كتب عليكم السعي"</p>
+                <p class="dua-reference">(رواه أحمد)</p>
+                
+                <p class="dua-text">عن جابر بن عبد الله رضي الله عنه في صفة حجة النبي ﷺ: "فبدأ بالصفا فصعد عليه حتى رأى البيت فاستقبل القبلة فوحّد الله وكبّره"</p>
+                <p class="dua-reference">(رواه مسلم)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="step-card animate__animated animate__fadeInUp animate__delay-3s">
+        <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#step4">
+          <span class="step-number">4</span>
+          <h3>يوم التروية (8 ذو الحجة)</h3>
+          <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div id="step4" class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="../images/mina.jpg" class="img-fluid rounded mb-3" alt="يوم التروية">
+            </div>
+            <div class="col-md-8">
+              <p>في اليوم الثامن من ذو الحجة (يوم التروية)، يتوجه الحاج إلى منى حيث يقيم الحاج هناك ليلة التاسع ويصلي خمس صلوات.</p>
+              <ul>
+                <li>يخرج الحاج من مكة إلى منى بعد صلاة الفجر</li>
+                <li>يبيت الحاج في منى ليلة التاسع من ذي الحجة</li>
+                <li>يُصلي الحاج في منى الظهر والعصر والمغرب والعشاء والفجر قصراً دون جمع</li>
+                <li>يُستحب الإكثار من التلبية والذكر والدعاء</li>
+              </ul>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-praying-hands"></i> أدعية يوم التروية</h4>
+                <p class="dua-text">"اللهم إني أسألك في هذا المقام المبارك أن تغفر لي ذنوبي، وتقبل حجي، وتجعلني من عبادك الصالحين"</p>
+                
+                <p class="dua-text">"اللهم اجعلني في هذا اليوم من المستغفرين، واجعلني من عبادك الشاكرين، وارزقني حجاً مبروراً وسعياً مشكوراً"</p>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+              </div>
+              
+              <div class="alert alert-light mt-3">
+                <strong>الحديث:</strong> "كان النبي صلى الله عليه وسلم يبيت بمنى ليلة التروية" (رواه أبو داود).
+              </div>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-book-hadith"></i> أحاديث يوم التروية</h4>
+                <p class="dua-text">عن جابر رضي الله عنه في صفة حجة النبي ﷺ: "فأهل بالتوحيد لبيك اللهم لبيك لبيك لا شريك لك لبيك إن الحمد والنعمة لك والملك لا شريك لك"</p>
+                <p class="dua-reference">(رواه مسلم)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-card animate__animated animate__fadeInUp animate__delay-4s">
+        <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#step5">
+          <span class="step-number">5</span>
+          <h3>يوم عرفة (9 ذو الحجة)</h3>
+          <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div id="step5" class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="../images/arafat.jpg" class="img-fluid rounded mb-3" alt="يوم عرفة">
+            </div>
+            <div class="col-md-8">
+              <p>الوقوف بعرفة هو ركن الحج الأعظم في اليوم التاسع من ذو الحجة.</p>
+              <ul>
+                <li>يتوجه الحاج من منى إلى عرفة بعد شروق الشمس</li>
+                <li>يبدأ وقت الوقوف بعرفة من زوال الشمس (وقت الظهر) حتى غروب الشمس</li>
+                <li>يجب على الحاج أن يقف داخل حدود عرفة ولو للحظة واحدة</li>
+                <li>يُستحب الإكثار من الدعاء والذكر والاستغفار في هذا اليوم</li>
+              </ul>
+              
+              <div class="dua-section" id="dua-arafah">
+                <h4 class="dua-title"><i class="fas fa-hands-praying"></i> أدعية يوم عرفة</h4>
+                <p class="dua-text">"لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير"</p>
+                <p class="dua-reference">(خير الدعاء دعاء يوم عرفة)</p>
+                
+                <p class="dua-text">"اللهم لك الحمد كالذي نقول وخيراً مما نقول، اللهم لك صلاتي ونسكي ومحياي ومماتي، وإليك مآبي ولك رب تراثي، اللهم إني أعوذ بك من عذاب القبر ووسوسة الصدر وشتات الأمر"</p>
+                
+                <p class="dua-text">"اللهم إني أسألك من خير ما سألك منه نبيك محمد ﷺ، وأعوذ بك من شر ما استعاذ منه نبيك محمد ﷺ"</p>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+              </div>
+              
+              <div class="alert alert-light mt-3">
+                <strong>الحديث:</strong> "خير الدعاء دعاء يوم عرفة، وخير ما قلت أنا والنبيون من قبلي: لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير" (رواه الترمذي).
+              </div>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-book-hadith"></i> أحاديث يوم عرفة</h4>
+                <p class="dua-text">قال رسول الله ﷺ: "الحج عرفة" (رواه الترمذي)</p>
+                
+                <p class="dua-text">"ما من يوم أكثر من أن يعتق الله فيه عبداً من النار من يوم عرفة" (رواه مسلم)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-card animate__animated animate__fadeInUp animate__delay-5s">
+        <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#step6">
+          <span class="step-number">6</span>
+          <h3>المبيت بمزدلفة (9-10 ذو الحجة)</h3>
+          <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div id="step6" class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="../images/muzdalifah.jpg" class="img-fluid rounded mb-3" alt="المبيت بمزدلفة">
+            </div>
+            <div class="col-md-8">
+              <p>بعد غروب شمس يوم عرفة، يتوجه الحاج إلى مزدلفة للمبيت فيها.</p>
+              <ul>
+                <li>يصل الحاج إلى مزدلفة بعد مغرب يوم عرفة</li>
+                <li>يُصلي الحاج المغرب والعشاء جمعاً وقصراً</li>
+                <li>يجمع الحاج الحصى لرمي الجمرات (70 حصاة أو أكثر)</li>
+                <li>يبيت الحاج في مزدلفة حتى منتصف الليل على الأقل</li>
+              </ul>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-moon"></i> أدعية مزدلفة</h4>
+                <p class="dua-text">"اللهم إنك تعلم سري وعلانيتي، فاقبل معذرتي، وتعلم حاجتي، فأعطني سؤلي، وتعلم ما في نفسي فاغفر لي ذنوبي"</p>
+                <p class="dua-reference">(رواه الترمذي)</p>
+                
+                <p class="dua-text">"اللهم اجعلني في هذه الليلة من المستغفرين، واجعلني من عبادك الشاكرين، وارزقني حجاً مبروراً وسعياً مشكوراً"</p>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+              </div>
+              
+              <div class="alert alert-light mt-3">
+                <strong>الآية:</strong> "فَإِذَا أَفَضْتُمْ مِنْ عَرَفَاتٍ فَاذْكُرُوا اللَّهَ عِنْدَ الْمَشْعَرِ الْحَرَامِ" (البقرة: 198)
+              </div>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-book-hadith"></i> أحاديث مزدلفة</h4>
+                <p class="dua-text">عن جابر رضي الله عنه قال: "أفاض رسول الله صلى الله عليه وسلم من عرفة حتى أتى المشعر الحرام فاستقبل القبلة فدعا وكبر وهلل ووحّد الله"</p>
+                <p class="dua-reference">(رواه مسلم)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-card animate__animated animate__fadeInUp animate__delay-6s">
+        <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#step7">
+          <span class="step-number">7</span>
+          <h3>يوم النحر (10 ذو الحجة)</h3>
+          <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div id="step7" class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="../images/nahr.jpg" class="img-fluid rounded mb-3" alt="يوم النحر">
+            </div>
+            <div class="col-md-8">
+              <p>في اليوم العاشر من ذي الحجة (يوم النحر)، يؤدي الحاج عدة مناسك:</p>
+              <ul>
+                <li>رمي جمرة العقبة الكبرى بسبع حصيات</li>
+                <li>ذبح الهدي (لحج التمتع والقران)</li>
+                <li>الحلق أو التقصير</li>
+                <li>طواف الإفاضة</li>
+                <li>السعي (إذا لم يكن قد سعى من قبل)</li>
+              </ul>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-cut"></i> أدعية يوم النحر</h4>
+                <p class="dua-text">عند الرمي: "بسم الله، الله أكبر، رغماً للشيطان وحزبه، وإرضاءً للرحمن"</p>
+                
+                <p class="dua-text">عند الذبح: "بسم الله والله أكبر، اللهم منك ولك، اللهم تقبل مني"</p>
+                <p class="dua-reference">(رواه مسلم)</p>
+                
+                <p class="dua-text">عند الحلق: "اللهم كما أظهرت شعري للتقصير، فأظهر قلبي لطاعتك، واجعلني من عبادك التائبين"</p>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+              </div>
+              
+              <div class="alert alert-light mt-3">
+                <strong>الحديث:</strong> "اللهم اغفر للمحلقين. قالوا: والمقصرين يا رسول الله؟ قال: اللهم اغفر للمحلقين. قالوا: والمقصرين يا رسول الله؟ قال: والمقصرين" (متفق عليه).
+              </div>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-book-hadith"></i> أحاديث يوم النحر</h4>
+                <p class="dua-text">قال رسول الله ﷺ: "إنما جعل الطواف بالبيت وبين الصفا والمروة ورمي الجمار لإقامة ذكر الله"</p>
+                <p class="dua-reference">(رواه أبو داود)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-card animate__animated animate__fadeInUp animate__delay-7s">
+        <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#step8">
+          <span class="step-number">8</span>
+          <h3>أيام التشريق (11-13 ذو الحجة)</h3>
+          <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div id="step8" class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="../images/jamarat.jpg" class="img-fluid rounded mb-3" alt="أيام التشريق">
+            </div>
+            <div class="col-md-8">
+              <p>في الأيام 11 و12 و13 من ذي الحجة (أيام التشريق)، يؤدي الحاج المناسك التالية:</p>
+              <ul>
+                <li>المبيت في منى ليالي أيام التشريق</li>
+                <li>رمي الجمار الثلاث (الصغرى، الوسطى، الكبرى) بسبع حصيات لكل جمرة</li>
+                <li>يبدأ الرمي بعد زوال الشمس (بعد الظهر)</li>
+                <li>يُستحب الدعاء بعد رمي الجمرة الصغرى والوسطى</li>
+              </ul>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-pray"></i> أدعية أيام التشريق</h4>
+                <p class="dua-text">بعد رمي الجمرة الصغرى والوسطى: "اللهم اجعله حجاً مبروراً، وذنباً مغفوراً، وسعياً مشكوراً، وعملاً مقبولاً، وتجارة لن تبور"</p>
+                
+                <p class="dua-text">"اللهم إني أسألك في هذه الأيام المباركة أن تغفر لي ذنوبي، وتقبل حجي، وتجعلني من عبادك الصالحين"</p>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+              </div>
+              
+              <div class="alert alert-light mt-3">
+                <strong>الحديث:</strong> "أيام التشريق أيام أكل وشرب وذكر الله" (رواه مسلم).
+              </div>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-book-hadith"></i> أحاديث أيام التشريق</h4>
+                <p class="dua-text">قال رسول الله ﷺ: "رمى النبي صلى الله عليه وسلم الجمار في أيام التشريق إذا زالت الشمس"</p>
+                <p class="dua-reference">(رواه البخاري)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-card animate__animated animate__fadeInUp animate__delay-8s">
+        <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#step9">
+          <span class="step-number">9</span>
+          <h3>طواف الوداع</h3>
+          <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div id="step9" class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="../images/farewell.jpg" class="img-fluid rounded mb-3" alt="طواف الوداع">
+            </div>
+            <div class="col-md-8">
+              <p>قبل مغادرة مكة، يؤدي الحاج طواف الوداع سبعة أشواط.</p>
+              <ul>
+                <li>يجب على الحاج أن يكون طواف الوداع آخر شيء يفعله في مكة</li>
+                <li>لا يوجد سعي بعد طواف الوداع</li>
+                <li>يُستحب الدعاء أثناء الطواف</li>
+                <li>بعد الطواف، يصلي الحاج ركعتي الطواف</li>
+              </ul>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-hand-wave"></i> أدعية طواف الوداع</h4>
+                <p class="dua-text">"اللهم لا تجعله آخر العهد من بيتك الحرام، وارزقني العودة إليه في عافية وسلام"</p>
+                
+                <p class="dua-text">"اللهم اجعلني من عبادك الصالحين، واجعل حجي مبروراً، وذنبي مغفوراً، وسعيي مشكوراً، وعملي مقبولاً، وتجارة لن تبور"</p>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+              </div>
+              
+              <div class="alert alert-light mt-3">
+                <strong>الحديث:</strong> "كان الناس ينصرفون في كل وجه، فقال رسول الله صلى الله عليه وسلم: لا ينفرن أحد حتى يكون آخر عهده بالبيت" (رواه مسلم).
+              </div>
+              
+              <div class="dua-section" id="hadiths">
+                <h4 class="dua-title"><i class="fas fa-book-hadith"></i> أحاديث طواف الوداع</h4>
+                <p class="dua-text">عن ابن عباس رضي الله عنهما قال: "أمر الناس أن يكون آخر عهدهم بالبيت، إلا أنه خفف عن المرأة الحائض"</p>
+                <p class="dua-reference">(متفق عليه)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-5 py-5">
+      <div class="container">
+        <h2 class="section-title">الخرائط المهمة للحجاج</h2>
+        
+        <div class="mb-5">
+          <h3 class="map-title">خريطة مواقيت الإحرام</h3>
+          <p class="map-description">مواقيت الإحرام هي الأماكن التي حددها النبي ﷺ لأداء مناسك الحج والعمرة</p>
+          
+          <div class="map-container" id="mawaqitMap"></div>
+          
+          <div class="map-legend">
+            <div class="map-legend-item">
+              <span>ذو الحليفة (أهل المدينة)</span>
+              <div class="map-legend-color" style="background-color: #e74c3c;"></div>
+            </div>
+            <div class="map-legend-item">
+              <span>الجحفة (أهل الشام)</span>
+              <div class="map-legend-color" style="background-color: #3498db;"></div>
+            </div>
+            <div class="map-legend-item">
+              <span>قرن المنازل (أهل نجد)</span>
+              <div class="map-legend-color" style="background-color: #2ecc71;"></div>
+            </div>
+            <div class="map-legend-item">
+              <span>يلملم (أهل اليمن)</span>
+              <div class="map-legend-color" style="background-color: #f39c12;"></div>
+            </div>
+            <div class="map-legend-item">
+              <span>ذات عرق (أهل العراق)</span>
+              <div class="map-legend-color" style="background-color: #9b59b6;"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb-5">
+          <h3 class="map-title">خريطة مناسك الحج</h3>
+          <p class="map-description">الأماكن الرئيسية لأداء مناسك الحج في مكة ومنى وعرفة ومزدلفة</p>
+          
+          <div class="map-container" id="hajjMap"></div>
+          
+          <div class="map-legend">
+            <div class="map-legend-item">
+              <span>المسجد الحرام</span>
+              <div class="map-legend-color" style="background-color: #e74c3c;"></div>
+            </div>
+            <div class="map-legend-item">
+              <span>منى</span>
+              <div class="map-legend-color" style="background-color: #3498db;"></div>
+            </div>
+            <div class="map-legend-item">
+              <span>عرفة</span>
+              <div class="map-legend-color" style="background-color: #2ecc71;"></div>
+            </div>
+            <div class="map-legend-item">
+              <span>مزدلفة</span>
+              <div class="map-legend-color" style="background-color: #f39c12;"></div>
+            </div>
+            <div class="map-legend-item">
+              <span>جمرات منى</span>
+              <div class="map-legend-color" style="background-color: #9b59b6;"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb-5">
+          <h3 class="map-title">خريطة المسجد الحرام</h3>
+          <p class="map-description">أهم المعالم في المسجد الحرام والكعبة المشرفة</p>
+          
+          <div class="map-container" id="haramMap"></div>
+          
+          <div class="map-legend">
+            <div class="map-legend-item">
+              <span>الكعبة المشرفة</span>
+              <div class="map-legend-color" style="background-color: #e74c3c;"></div>
+            </div>
+            <div class="map-legend-item">
+              <span>الحجر الأسود</span>
+              <div class="map-legend-color" style="background-color: #3498db;"></div>
+            </div>
+            <div class="map-legend-item">
+              <span>مقام إبراهيم</span>
+              <div class="map-legend-color" style="background-color: #2ecc71;"></div>
+            </div>
+            <div class="map-legend-item">
+              <span>الصفا والمروة</span>
+              <div class="map-legend-color" style="background-color: #f39c12;"></div>
+            </div>
+            <div class="map-legend-item">
+              <span>بئر زمزم</span>
+              <div class="map-legend-color" style="background-color: #9b59b6;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tips-section">
+      <div class="container">
+        <h2 class="section-title animate__animated animate__fadeIn">نصائح لأداء الحج</h2>
+        
+        <ul class="nav nav-tabs tips-tabs" id="tipsTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="before-tab" data-bs-toggle="tab" data-bs-target="#before" type="button" role="tab">قبل السفر</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="during-tab" data-bs-toggle="tab" data-bs-target="#during" type="button" role="tab">أثناء الحج</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="after-tab" data-bs-toggle="tab" data-bs-target="#after" type="button" role="tab">بعد العودة</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="dua-tab" data-bs-toggle="tab" data-bs-target="#dua" type="button" role="tab">أدعية مختارة</button>
+          </li>
+        </ul>
+        
+        <div class="tab-content" id="tipsTabContent">
+          <div class="tab-pane fade show active" id="before" role="tabpanel">
+            <div class="tip-content">
+              <div class="tip-item">
+                <h4><i class="fas fa-heart"></i> النية الصافية</h4>
+                <p>يجب أن تكون نيتك لله تعالى خالصة، وأن تسعى في الحج لطلب المغفرة والرحمة من الله.</p>
+                <div class="alert alert-light mt-2">
+                  <strong>حديث:</strong> "إنما الأعمال بالنيات" (متفق عليه)
+                </div>
+              </div>
+              
+              <div class="tip-item">
+                <h4><i class="fas fa-graduation-cap"></i> تعلم المناسك</h4>
+                <p>من المهم أن تتعلم مناسك الحج من علماء موثوقين حتى لا يقع أي خطأ. يمكنك حضور دروس أو مشاهدة فيديوهات تعليمية.</p>
+                <div class="alert alert-light mt-2">
+                  <strong>آية:</strong> "فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ" (سورة النحل، الآية 43)
+                </div>
+              </div>
+              
+              <div class="tip-item">
+                <h4><i class="fas fa-suitcase"></i> الاستعداد الجسدي والمالي</h4>
+                <p>تأكد من صحتك الجسدية وأنك مستعد للرحلة. كما يجب أن تحرص على تجهيز المال اللازم للسفر والإقامة.</p>
+                <div class="alert alert-light mt-2">
+                  <strong>حديث:</strong> "خذوا زاداً فإن خير الزاد التقوى" (سورة البقرة، الآية 197)
+                </div>
+              </div>
+              
+              <div class="tip-item">
+                <h4><i class="fas fa-book-quran"></i> تحضير الأدعية</h4>
+                <p>قم بتحضير الأدعية التي ترغب في الدعاء بها أثناء الحج، مثل: "اللهم اجعل هذا السفر سفرًا مباركًا، واجعلني من المقبولين".</p>
+                <div class="dua-section mt-3">
+                  <p class="dua-text">"اللهم إني أسألك في سفري هذا البر والتقوى، ومن العمل ما ترضى"</p>
+                  <p class="dua-text">"اللهم هون علينا سفرنا هذا واطو عنا بعده"</p>
+                  <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tab-pane fade" id="during" role="tabpanel">
+            <div class="tip-content">
+              <div class="tip-item">
+                <h4><i class="fas fa-hands-praying"></i> التفرغ للعبادة</h4>
+                <p>أثناء الحج، احرص على أن يكون قلبك مع الله طوال الوقت، تجنب أي distractions.</p>
+                <div class="alert alert-light mt-2">
+                  <strong>آية:</strong> "وَاذْكُر رَّبَّكَ فِي نَفْسِكَ تَضَرُّعًا وَخِيفَةً" (سورة الأعراف، الآية 205)
+                </div>
+              </div>
+              
+              <div class="tip-item">
+                <h4><i class="fas fa-comment-dots"></i> الإكثار من الدعاء</h4>
+                <p>اجعل لسانك رطبًا بذكر الله في كل وقت. أكثر من الدعاء والتسبيح والاستغفار.</p>
+                <div class="dua-section mt-3">
+                  <p class="dua-text">"اللهم إني أسألك رضاك والجنة، وأعوذ بك من سخطك والنار"</p>
+                  <p class="dua-text">"ربنا آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار"</p>
+                  <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+                </div>
+              </div>
+              
+              <div class="tip-item">
+                <h4><i class="fas fa-hand-holding-heart"></i> الصدقة والنية الصافية</h4>
+                <p>تذكر أن الحج ليس مجرد أداء مناسك، بل هي فرصة للتطهر والقيام بالأعمال الصالحة. حافظ على نيتك الصافية وأفعال الخير.</p>
+                <div class="alert alert-light mt-2">
+                  <strong>حديث:</strong> "الصدقة تطفئ الخطيئة كما يطفئ الماء النار" (رواه الترمذي)
+                </div>
+              </div>
+              
+              <div class="tip-item">
+                <h4><i class="fas fa-person-walking"></i> تحمل المشقة</h4>
+                <p>الحج قد يكون متعباً، ولكن تحمل ذلك في سبيل الله. تذكر أن كل خطوة تخطوها في المسجد الحرام لها أجر عظيم.</p>
+                <div class="alert alert-light mt-2">
+                  <strong>حديث:</strong> "صلاة في مسجدي هذا أفضل من ألف صلاة فيما سواه إلا المسجد الحرام، وصلاة في المسجد الحرام أفضل من مائة ألف صلاة في هذا" (رواه أحمد)
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tab-pane fade" id="after" role="tabpanel">
+            <div class="tip-content">
+              <div class="tip-item">
+                <h4><i class="fas fa-pray"></i> الحفاظ على العبادات</h4>
+                <p>يجب أن تلتزم بالصلاة والعبادات بعد العودة. لا تجعل الحج مجرد رحلة تنتهي بانتهائها.</p>
+                <div class="alert alert-light mt-2">
+                  <strong>آية:</strong> "وَاعْبُدْ رَبَّكَ حَتَّى يَأْتِيَكَ الْيَقِينُ" (سورة الحج، الآية 99)
+                </div>
+              </div>
+              
+              <div class="tip-item">
+                <h4><i class="fas fa-hands"></i> شكر الله</h4>
+                <p>احرص على شكر الله على قبوله لك في هذا السفر المبارك. أكثر من الحمد والثناء على نعمه.</p>
+                <div class="dua-section mt-3">
+                  <p class="dua-text">"اللهم أعني على ذكرك وشكرك وحسن عبادتك"</p>
+                  <p class="dua-reference">(دعاء مأثور)</p>
+                  <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+                </div>
+              </div>
+              
+              <div class="tip-item">
+                <h4><i class="fas fa-share-alt"></i> مشاركة الخبرات</h4>
+                <p>تحدث مع الآخرين عن تجربتك، وذكرهم بأهمية الحج وأجره. قد تكون سببًا في تشجيع غيرك على أدائه.</p>
+                <div class="alert alert-light mt-2">
+                  <strong>حديث:</strong> "بلغوا عني ولو آية" (رواه البخاري)
+                </div>
+              </div>
+              
+              <div class="tip-item">
+                <h4><i class="fas fa-book"></i> المداومة على الطاعة</h4>
+                <p>اجعل الحج بداية لمرحلة جديدة من الطاعة والالتزام. لا تكن ممن يحجون ثم يعودون إلى المعاصي.</p>
+                <div class="alert alert-light mt-2">
+                  <strong>آية:</strong> "وَأَقِمِ الصَّلَاةَ طَرَفَيِ النَّهَارِ وَزُلَفًا مِّنَ اللَّيْلِ إِنَّ الْحَسَنَاتِ يُذْهِبْنَ السَّيِّئَاتِ" (سورة هود، الآية 114)
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tab-pane fade" id="dua" role="tabpanel">
+            <div class="tip-content">
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-hands-praying"></i> أدعية السفر</h4>
+                <p class="dua-text">"اللهم بك أصول وبك أجول وبك أسير، اللهم إني أسألك من بركة هذا السفر، وتقوى والعمل الصالح"</p>
+                <p class="dua-reference">(دعاء السفر المأثور)</p>
+                
+                <p class="dua-text">"سبحان الذي سخر لنا هذا وما كنا له مقرنين، وإنا إلى ربنا لمنقلبون"</p>
+                <p class="dua-reference">(سورة الزخرف، الآية 13-14)</p>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+              </div>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-kaaba"></i> أدعية زيارة المسجد الحرام</h4>
+                <p class="dua-text">"اللهم أنت السلام ومنك السلام، تباركت يا ذا الجلال والإكرام"</p>
+                <p class="dua-reference">(دعاء دخول المسجد)</p>
+                
+                <p class="dua-text">"اللهم افتح لي أبواب رحمتك، وارزقني زيارة بيتك الحرام، واجعلني من عبادك الصالحين"</p>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+              </div>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-star"></i> أدعية عامة</h4>
+                <p class="dua-text">"ربنا لا تزغ قلوبنا بعد إذ هديتنا وهب لنا من لدنك رحمة إنك أنت الوهاب"</p>
+                <p class="dua-reference">(سورة آل عمران، الآية 8)</p>
+                
+                <p class="dua-text">"اللهم إني أسألك علماً نافعاً، ورزقاً طيباً، وعملاً متقبلاً"</p>
+                <p class="dua-reference">(دعاء مأثور)</p>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+              </div>
+              
+              <div class="dua-section">
+                <h4 class="dua-title"><i class="fas fa-book-quran"></i> آيات الدعاء</h4>
+                <p class="dua-text">"رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ"</p>
+                <p class="dua-reference">(سورة البقرة، الآية 201)</p>
+                
+                <p class="dua-text">"رَّبِّ أَدْخِلْنِي مُدْخَلَ صِدْقٍ وَأَخْرِجْنِي مُخْرَجَ صِdِقٍ وَاجْعَل لِّي مِن لَّدُنكَ سُلْطَانًا نَّصِيرًا"</p>
+                <p class="dua-reference">(سورة الإسراء، الآية 80)</p>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)"><i class="far fa-copy"></i> نسخ الدعاء</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-5 py-5" style="background-color: var(--cream); border-radius: 15px;">
+      <div class="container">
+        <h2 class="section-title animate__animated animate__fadeIn">فيديوهات تعليمية</h2>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="ratio ratio-16x9 mb-3">
+                  <iframe src="https://youtu.be/hb2KwtxJpj8?si=w_APxgkeGabU62hq" allowfullscreen></iframe>
+                </div>
+                <h4>شرح مناسك الحج بالتفصيل</h4>
+                <p>فيديو يشرح خطوات الحج بطريقة مبسطة مع أدعية كل خطوة</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="ratio ratio-16x9 mb-3">
+                  <iframe src="https://youtu.be/RA26geUJeMI?si=yQweMl-T6JE5N_WB" allowfullscreen></iframe>
+                </div>
+                <h4>أهمية يوم عرفة وأدعيته</h4>
+                <p>فيديو يتناول فضائل يوم عرفة وأفضل الأدعية فيه</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5 class="mb-3">بوابة الحج والعمرة</h5>
+          <p>دليلك الشامل لأداء المناسك بطريقة صحيحة وميسرة وفق الكتاب والسنة</p>
+          <div class="social-icons mt-3">
+            <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="mb-3">روابط سريعة</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html" class="text-white">الرئيسية</a></li>
+            <li class="mb-2"><a href="hajj.html" class="text-white">مناسك الحج</a></li>
+            <li class="mb-2"><a href="umrah.html" class="text-white">مناسك العمرة</a></li>
+            <li class="mb-2"><a href="salat.html" class="text-white">مواقيت الصلاة</a></li>
+            <li><a href="contact.html" class="text-white">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="mb-3">اشترك في النشرة البريدية</h5>
+          <p>احصل على آخر التحديثات والنصائح حول الحج والعمرة</p>
+          <form class="mt-3">
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="بريدك الإلكتروني" aria-label="Email">
+              <button class="btn btn-primary" type="button" style="background: var(--gold-gradient); border: none;">اشترك</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr class="my-4" style="border-color: rgba(198, 166, 100, 0.3);">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="mb-0">جميع الحقوق محفوظة &copy; <span id="currentYear"></span> بوابة الحج والعمرة</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="mb-0">تصميم وتطوير: <a href="#" class="text-white">مهلول أشرف</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <div class="share-btn" id="shareBtn">
+    <i class="fas fa-share-alt"></i>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  
+  <script src="static/js/hajj.js"></script>
+</body>
+</html>

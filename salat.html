@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مواقيت الصلاة - دليلك الشامل لمواعيد الصلاة حسب التوقيت المحلي">
+  <meta name="keywords" content="مواقيت الصلاة, أوقات الصلاة, الفجر, الظهر, العصر, المغرب, العشاء, السعودية">
+  <meta name="author" content="بوابة الحج والعمرة">
+  
+  <title>بوابة الحج والعمرة | مواقيت الصلاة</title>
+
+  <!-- روابط CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lateef:wght@400;700&family=Scheherazade+New:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="static/css/salat.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="logo-container">
+          <i class="fas fa-kaaba logo-icon floating-icon"></i>
+        </span>
+        بوابة الحج والعمرة
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="prayer-times.html"><i class="fas fa-clock"></i> مواقيت الصلاة</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hajj.html"><i class="fas fa-kaaba"></i> الحج</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="umrah.html"><i class="fas fa-mosque"></i> العمرة</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="duas.html"><i class="fas fa-hands-praying"></i> الدعية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-section">
+    <div class="hero-text container">
+      <h1 class="mb-4 animate__animated animate__fadeInUp">مواقيت الصلاة اليومية</h1>
+    </div>
+  </header>
+
+  <section class="prayer-times-main">
+    <div class="container">
+      <div class="prayer-header">
+        <h2 class="animate__animated animate__fadeInUp">مواقيت الصلاة حسب التوقيت المحلي</h2>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">تعرف على أوقات الصلاة في مدينتك ومواعيد الأذان والإقامة</p>
+      </div>
+      
+      <div class="date-selector animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="location-date-container">
+          <div class="location-selector">
+            <label for="city-select"><i class="fas fa-location-dot me-2"></i>اختر مدينتك:</label>
+            <select id="city-select" class="form-select">
+              <option value="makkah">مكة المكرمة</option>
+              <option value="madina">المدينة المنورة</option>
+              <option value="riyadh">الرياض</option>
+              <option value="jeddah">جدة</option>
+              <option value="dammam">الدمام</option>
+              <option value="taif">الطائف</option>
+              <option value="yanbu">ينبع</option>
+              <option value="hafralbatin">حفر الباطن</option>
+              <option value="abha">أبها</option>
+              <option value="tabuk">تبوك</option>
+              <option value="qassim">القصيم</option>
+              <option value="hail">حائل</option>
+              <option value="jazan">جازان</option>
+              <option value="najran">نجران</option>
+              <option value="bahah">الباحة</option>
+            </select>
+          </div>
+          
+          <div class="date-picker">
+            <label for="date-select"><i class="fas fa-calendar-days me-2"></i>اختر التاريخ:</label>
+            <input type="date" id="date-select" class="form-control" min="" max="">
+          </div>
+        </div>
+        
+        <div class="current-date-display">
+          <span id="current-date"></span>
+          <div class="hijri-date" id="hijri-date"></div>
+        </div>
+      </div>
+      
+      <div class="prayer-times-grid">
+        <div class="prayer-card animate__animated animate__fadeInUp animate__delay-3s">
+          <div class="prayer-icon"><i class="fas fa-moon"></i></div>
+          <div class="prayer-name">صلاة الفجر</div>
+          <div class="prayer-time" id="fajr-time">4:30 ص</div>
+          <div class="prayer-remaining" id="fajr-remaining">باقي 5 ساعات و 20 دقيقة</div>
+          
+          <div class="prayer-details">
+            <p>وقت الأذان: <span class="iqama-time" id="fajr-adhan">4:30 ص</span></p>
+            <p>وقت الإقامة: <span class="iqama-time" id="fajr-iqama">4:45 ص</span></p>
+            <p>ينتهي وقت الصلاة: <span class="iqama-time" id="fajr-end">5:45 ص</span></p>
+          </div>
+        </div>
+        
+        <div class="prayer-card animate__animated animate__fadeInUp animate__delay-3s">
+          <div class="prayer-icon"><i class="fas fa-sun"></i></div>
+          <div class="prayer-name">وقت الشروق</div>
+          <div class="prayer-time" id="sunrise-time">6:15 ص</div>
+          <div class="prayer-remaining" id="sunrise-remaining">باقي 7 ساعات و 5 دقائق</div>
+          
+          <div class="prayer-details">
+            <p>بداية وقت النهي عن الصلاة</p>
+            <p>يستمر حتى: <span class="iqama-time" id="sunrise-end">12:30 م</span></p>
+          </div>
+        </div>
+        
+        <div class="prayer-card animate__animated animate__fadeInUp animate__delay-4s" id="dhuhr-card">
+          <div class="prayer-next" id="current-prayer-label">الصلاة الحالية</div>
+          <div class="prayer-icon"><i class="fas fa-sun"></i></div>
+          <div class="prayer-name">صلاة الظهر</div>
+          <div class="prayer-time" id="dhuhr-time">12:30 م</div>
+          <div class="prayer-remaining" id="dhuhr-remaining">الوقت الحالي</div>
+          
+          <div class="prayer-details">
+            <p>وقت الأذان: <span class="iqama-time" id="dhuhr-adhan">12:30 م</span></p>
+            <p>وقت الإقامة: <span class="iqama-time" id="dhuhr-iqama">12:45 م</span></p>
+            <p>ينتهي وقت الصلاة: <span class="iqama-time" id="dhuhr-end">3:45 م</span></p>
+          </div>
+        </div>
+        
+        <div class="prayer-card animate__animated animate__fadeInUp animate__delay-4s">
+          <div class="prayer-icon"><i class="fas fa-cloud-sun"></i></div>
+          <div class="prayer-name">صلاة العصر</div>
+          <div class="prayer-time" id="asr-time">3:45 م</div>
+          <div class="prayer-remaining" id="asr-remaining">باقي 3 ساعات و 15 دقيقة</div>
+          
+          <div class="prayer-details">
+            <p>وقت الأذان: <span class="iqama-time" id="asr-adhan">3:45 م</span></p>
+            <p>وقت الإقامة: <span class="iqama-time" id="asr-iqama">4:00 م</span></p>
+            <p>ينتهي وقت الصلاة: <span class="iqama-time" id="asr-end">6:30 م</span></p>
+          </div>
+        </div>
+        
+        <div class="prayer-card animate__animated animate__fadeInUp animate__delay-5s">
+          <div class="prayer-icon"><i class="fas fa-sunset"></i></div>
+          <div class="prayer-name">صلاة المغرب</div>
+          <div class="prayer-time" id="maghrib-time">6:30 م</div>
+          <div class="prayer-remaining" id="maghrib-remaining">باقي 6 ساعات</div>
+          
+          <div class="prayer-details">
+            <p>وقت الأذان: <span class="iqama-time" id="maghrib-adhan">6:30 م</span></p>
+            <p>وقت الإقامة: <span class="iqama-time" id="maghrib-iqama">6:35 م</span></p>
+            <p>ينتهي وقت الصلاة: <span class="iqama-time" id="maghrib-end">8:00 م</span></p>
+          </div>
+        </div>
+        
+        <div class="prayer-card animate__animated animate__fadeInUp animate__delay-5s">
+          <div class="prayer-icon"><i class="fas fa-moon"></i></div>
+          <div class="prayer-name">صلاة العشاء</div>
+          <div class="prayer-time" id="isha-time">8:00 م</div>
+          <div class="prayer-remaining" id="isha-remaining">باقي 7 ساعات و 50 دقيقة</div>
+          
+          <div class="prayer-details">
+            <p>وقت الأذان: <span class="iqama-time" id="isha-adhan">8:00 م</span></p>
+            <p>وقت الإقامة: <span class="iqama-time" id="isha-iqama">8:15 م</span></p>
+            <p>ينتهي وقت الصلاة: <span class="iqama-time" id="isha-end">4:30 ص</span></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="quran-verse animate__animated animate__fadeIn animate__delay-6s">
+        إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا
+        <span class="verse-reference">سورة النساء - الآية 103</span>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hijri-date@1.0.4/hijri-date.min.js"></script>
+  <script src="static/js/salat.js"></script>
+</body>
+</html>

@@ -1,0 +1,566 @@
+:root {
+    --dark-green: #0a240a;
+    --gold: #c6a664;
+    --light-beige: #f5f0e4;
+    --dark-brown: #3a2a20;
+    --cream: #fcf8ee;
+    --olive-green: #3c4b23;
+    --gold-light: rgba(198, 166, 100, 0.8);
+    --gold-dark: #b5881e;
+    --green-light: rgba(10, 36, 10, 0.95);
+    --green-darker: #051905;
+  }
+  
+  body {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    background-color: var(--light-beige);
+    color: var(--dark-brown);
+    line-height: 1.9;
+    overflow-x: hidden;
+    text-align: right;
+  }
+  
+  /* تحسينات شريط التنقل */
+  .navbar {
+    background-color: var(--green-light) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    padding: 15px 0;
+    transition: all 0.4s ease;
+    border-bottom: 2px solid var(--gold-light);
+  }
+  
+  .navbar.scrolled {
+    padding: 10px 0;
+    background-color: var(--green-darker) !important;
+    backdrop-filter: blur(8px);
+  }
+  
+  .navbar-brand {
+    color: var(--gold) !important;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    font-family: 'Lateef', serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navbar-brand .logo-container {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navbar-brand .logo-icon {
+    font-size: 1.8rem;
+    color: var(--gold);
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,0.4));
+  }
+  
+  .nav-link {
+    color: var(--cream) !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 5px;
+    padding: 8px 15px !important;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: 'Tajawal', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--gold) !important;
+    transform: translateY(-2px);
+    text-shadow: 0 0 5px rgba(198, 166, 100, 0.5);
+  }
+  
+  .nav-link:hover::before {
+    width: calc(100% - 30px);
+  }
+  
+  .nav-link.active {
+    background: linear-gradient(135deg, var(--gold-light), rgba(198, 166, 100, 0.5));
+    color: var(--dark-brown) !important;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(198, 166, 100, 0.3);
+  }
+  
+  .nav-link i {
+    margin-left: 8px;
+    font-size: 0.9em;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-link:hover i {
+    transform: scale(1.1);
+  }
+  
+  /* تأثير العائمة للأيقونات */
+  .floating-icon {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  /* قسم البطل المميز */
+  .hero-section {
+    background: linear-gradient(rgba(10, 36, 10, 0.9), rgba(60, 75, 35, 0.9));
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+  
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23c6a664" opacity="0.1" d="M30,10L50,30L70,10L90,30L70,50L90,70L70,90L50,70L30,90L10,70L30,50L10,30L30,10Z"/></svg>') repeat;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, var(--light-beige), transparent);
+    z-index: 2;
+  }
+  
+  .hero-text {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .hero-text h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    text-shadow: 3px 5px 15px rgba(0, 0, 0, 0.8);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+    animation: fadeInUp 1s ease both;
+    font-family: 'Lateef', serif;
+    background: linear-gradient(to bottom, var(--gold), #e8d9b5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* قسم مواقيت الصلاة الرئيسي */
+  .prayer-times-main {
+    padding: 80px 0;
+    position: relative;
+    background-color: var(--light-beige);
+  }
+  
+  .prayer-times-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%230a240a" opacity="0.05" d="M20,0L30,10L20,20L30,30L20,40L30,50L20,60L30,70L20,80L30,90L20,100L10,90L0,100L0,80L10,70L0,60L10,50L0,40L10,30L0,20L10,10L0,0L20,0Z"/></svg>') repeat;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+  
+  .prayer-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .prayer-header h2 {
+    font-size: 2.8rem;
+    color: var(--dark-green);
+    font-family: 'Lateef', serif;
+    margin-bottom: 20px;
+  }
+  
+  .prayer-header p {
+    font-size: 1.4rem;
+    color: var(--olive-green);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .date-selector {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(70, 50, 40, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .location-date-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .location-selector, .date-picker {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+  }
+  
+  .location-selector label, .date-picker label {
+    font-size: 1.3rem;
+    color: var(--dark-green);
+    margin-bottom: 15px;
+    display: block;
+    font-family: 'Tajawal', sans-serif;
+  }
+  
+  .location-selector select, .date-picker input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: 'Amiri', serif;
+    color: var(--dark-brown);
+    background-color: var(--cream);
+  }
+  
+  .current-date-display {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.4rem;
+    color: var(--olive-green);
+    font-weight: bold;
+  }
+  
+  .hijri-date {
+    font-size: 1.2rem;
+    color: var(--gold-dark);
+    margin-top: 5px;
+  }
+  
+  .prayer-times-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .prayer-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(70, 50, 40, 0.1);
+    transition: all 0.4s ease;
+    text-align: center;
+    border-bottom: 5px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .prayer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(70, 50, 40, 0.15);
+  }
+  
+  .prayer-card.current {
+    background: linear-gradient(135deg, var(--gold-light), rgba(198, 166, 100, 0.3));
+    border-color: var(--gold-dark);
+  }
+  
+  .prayer-card .prayer-icon {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  
+  .prayer-name {
+    font-size: 2rem;
+    color: var(--dark-green);
+    font-family: 'Lateef', serif;
+    margin-bottom: 15px;
+  }
+  
+  .prayer-time {
+    font-size: 2.8rem;
+    color: var(--gold-dark);
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .prayer-remaining {
+    font-size: 1.3rem;
+    color: var(--olive-green);
+    font-family: 'Tajawal', sans-serif;
+    background: rgba(10, 36, 10, 0.1);
+    padding: 8px 15px;
+    border-radius: 50px;
+    display: inline-block;
+  }
+  
+  .prayer-next {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--olive-green);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-family: 'Tajawal', sans-serif;
+  }
+  
+  .prayer-details {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--gold-light);
+  }
+  
+  .prayer-details p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: var(--dark-brown);
+  }
+  
+  .prayer-details .iqama-time {
+    font-weight: bold;
+    color: var(--gold-dark);
+  }
+  
+  /* إضافة آيات قرآنية */
+  .quran-verse {
+    font-size: 1.6rem;
+    font-family: 'Scheherazade New', serif;
+    color: var(--gold);
+    margin: 4rem auto;
+    max-width: 900px;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(10, 36, 10, 0.5);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(198, 166, 100, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeIn 2s ease both;
+    line-height: 2.2;
+    text-align: center;
+  }
+  
+  .quran-verse::before,
+  .quran-verse::after {
+    content: '"';
+    font-size: 4rem;
+    color: var(--gold-light);
+    position: absolute;
+    opacity: 0.3;
+    font-family: 'Amiri', serif;
+  }
+  
+  .quran-verse::before {
+    top: -15px;
+    right: 20px;
+  }
+  
+  .quran-verse::after {
+    bottom: -40px;
+    left: 20px;
+  }
+  
+  .verse-reference {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--cream);
+    margin-top: 20px;
+    font-style: italic;
+    font-family: 'Tajawal', sans-serif;
+  }
+  
+  /* تأثيرات حركية متقدمة */
+  @keyframes fadeInUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(40px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* تعديلات للجوال */
+  @media (max-width: 1400px) {
+    .hero-text h1 {
+      font-size: 3.5rem;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .hero-text h1 {
+      font-size: 3rem;
+    }
+    
+    .quran-verse {
+      font-size: 1.5rem;
+      padding: 25px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .hero-text h1 {
+      font-size: 2.8rem;
+    }
+    
+    .prayer-header h2 {
+      font-size: 2.5rem;
+    }
+    
+    .prayer-header p {
+      font-size: 1.3rem;
+    }
+    
+    .quran-verse {
+      font-size: 1.4rem;
+      line-height: 2;
+    }
+    
+    .navbar-brand .logo-icon {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-text h1 {
+      font-size: 2.4rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .quran-verse {
+      font-size: 1.3rem;
+      padding: 20px;
+    }
+    
+    .prayer-header h2 {
+      font-size: 2.2rem;
+    }
+    
+    .prayer-times-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .prayer-time {
+      font-size: 2.5rem;
+    }
+    
+    .location-date-container {
+      flex-direction: column;
+    }
+    
+    .location-selector, .date-picker {
+      min-width: 100%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero-text {
+      padding: 0 20px;
+    }
+    
+    .hero-text h1 {
+      font-size: 2rem;
+    }
+    
+    .navbar-brand {
+      font-size: 1.3rem;
+    }
+    
+    .navbar-brand .logo-container {
+      width: 35px;
+      height: 35px;
+      margin-left: 10px;
+    }
+    
+    .quran-verse {
+      font-size: 1.2rem;
+      padding: 15px;
+      margin: 3rem auto;
+    }
+    
+    .prayer-header h2 {
+      font-size: 2rem;
+    }
+    
+    .prayer-header p {
+      font-size: 1.1rem;
+    }
+    
+    .current-date-display {
+      font-size: 1.2rem;
+    }
+    
+    .hijri-date {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .hero-text h1 {
+      font-size: 1.8rem;
+    }
+  }

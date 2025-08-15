@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="بوابة الحج والعمرة - دليلك الشامل لأداء المناسك بطريقة صحيحة وميسرة">
+  <meta name="keywords" content="الحج, العمرة, مناسك, الكعبة, مكة, المدينة, السعودية">
+  <meta name="author" content="بوابة الحج والعمرة">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3171/3171170.png">
+  
+  <title>بوابة الحج والعمرة | الرئيسية</title>
+
+  <!-- روابط CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lateef:wght@400;700&family=Scheherazade+New:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+
+<body>
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="logo-container">
+          <i class="fas fa-moon logo-icon moon-icon floating"></i>
+          <i class="fas fa-kaaba logo-icon kaaba-icon pulsing"></i>
+        </span>
+        بوابة الحج والعمرة
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hajj.html"><i class="fas fa-kaaba"></i> الحج</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="umrah.html"><i class="fas fa-mosque"></i> العمرة</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="doaa.html"><i class="fas fa-hands-praying"></i> الأدعية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="salat.html"><i class="fas fa-clock"></i> مواقيت الصلاة</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-section">
+    <div class="container hero-content">
+      <div class="welcome-card animate__animated animate__fadeInDown">
+        <h1>بوابة الحج والعمرة الشاملة</h1>
+        <p>دليلكم المتكامل لأداء المناسك بطريقة صحيحة وميسّرة وفق السنة النبوية</p>
+      </div>
+      
+      <div class="quran-verse animate__animated animate__fadeIn">
+        وَأَذِّن فِي النَّاسِ بِالْحَجِّ يَأْتُوكَ رِجَالًا وَعَلَىٰ كُلِّ ضَامِرٍ يَأْتِينَ مِن كُلِّ فَجٍّ عَمِيقٍ
+        <span class="verse-reference">سورة الحج - الآية 27</span>
+      </div>
+      
+      <div class="hero-buttons d-flex flex-wrap justify-content-center animate__animated animate__fadeInUp">
+        <a href="hajj.html" class="btn hero-btn my-2 me-md-3">
+          <i class="fas fa-kaaba me-2"></i>مناسك الحج
+        </a>
+        <a href="umrah.html" class="btn hero-btn hero-btn-outline my-2">
+          <i class="fas fa-mosque me-2"></i>مناسك العمرة
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="azkar-slider">
+    <div class="azkar-container">
+      <h2 class="section-title animate__animated animate__fadeIn">أذكار الحج والعمرة</h2>
+      
+      <div class="azkar-slide animate__animated animate__fadeIn">
+        <div class="zekr-text">لبيك اللهم لبيك، لبيك لا شريك لك لبيك، إن الحمد والنعمة لك والملك، لا شريك لك</div>
+        <div class="zekr-reference">دعاء الإحرام</div>
+      </div>
+      
+      <div class="azkar-nav animate__animated animate__fadeInUp">
+        <div class="azkar-dot active"></div>
+        <div class="azkar-dot"></div>
+        <div class="azkar-dot"></div>
+        <div class="azkar-dot"></div>
+        <div class="azkar-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="islamic-accordion">
+    <div class="container">
+      <h2 class="accordion-title animate__animated animate__fadeIn">معالم إسلامية</h2>
+      <div class="accordion-container">
+        <div class="accordion-item animate__animated animate__fadeInUp">
+          <div class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              الكعبة المشرفة - بيت الله الحرام
+            </button>
+          </div>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+            <div class="accordion-body">
+              <div class="accordion-content">
+                <img src="static/images/kaaba-icon.jfif" alt="الكعبة المشرفة" class="accordion-image">
+                <div class="accordion-details">
+                  <h3>الكعبة المشرفة</h3>
+                  <p>الكعبة المشرفة هي قبلة المسلمين في صلواتهم، وحولها يطوف الحجاج، وهي أول بيت وضع للناس في الأرض وفق المعتقد الإسلامي. تقع الكعبة وسط المسجد الحرام في مكة المكرمة بالمملكة العربية السعودية.</p>
+                  <p>تتكون الكعبة من أحجار صلبة، ويبلغ ارتفاعها 15 متراً، ويبلغ طول ضلعها الذي به الباب 12 متراً، وكذلك الضلع الذي يقابله، أما الضلع الذي به الميزاب والذي يقابله، فطول كل منهما 10 أمتار.</p>
+                  <h4>أهمية الكعبة في الإسلام:</h4>
+                  <ul>
+                    <li>أول بيت وضع للناس في الأرض</li>
+                    <li>قبلة المسلمين في الصلاة</li>
+                    <li>يجب الطواف حولها في الحج والعمرة</li>
+                    <li>تحتوي على الحجر الأسود في ركنها الشرقي</li>
+                    <li>يستجاب الدعاء عندها</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              المسجد النبوي الشريف
+            </button>
+          </div>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+            <div class="accordion-body">
+              <div class="accordion-content">
+                <img src="static/images/2.jpeg" alt="المسجد النبوي" class="accordion-image">
+                <div class="accordion-details">
+                  <h3>المسجد النبوي الشريف</h3>
+                  <p>المسجد النبوي هو أحد أكبر المساجد في العالم وثاني أقدس موقع في الإسلام بعد المسجد الحرام في مكة المكرمة. بناه النبي محمد صلى الله عليه وسلم بعد هجرته إلى المدينة المنورة.</p>
+                  <p>يحتوي المسجد النبوي على قبر النبي محمد صلى الله عليه وسلم وقبري صاحبيه أبي بكر الصديق وعمر بن الخطاب رضي الله عنهما، كما يحتوي على الروضة الشريفة التي تعد من رياض الجنة.</p>
+                  <h4>مميزات المسجد النبوي:</h4>
+                  <ul>
+                    <li>ثاني مسجد بني في الإسلام</li>
+                    <li>يحتوي على قبر النبي محمد صلى الله عليه وسلم</li>
+                    <li>يحتوي على الروضة الشريفة</li>
+                    <li>الصلاة فيه تعدل ألف صلاة في غيره من المساجد</li>
+                    <li>يستجاب الدعاء عند الروضة الشريفة</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              جبل عرفة - يوم عرفة
+            </button>
+          </div>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+            <div class="accordion-body">
+              <div class="accordion-content">
+                <img src="static/images/arafat.jfif" alt="جبل عرفة" class="accordion-image">
+                <div class="accordion-details">
+                  <h3>جبل عرفة</h3>
+                  <p>جبل عرفة هو جبل يقع على الطريق بين مكة والطائف في المملكة العربية السعودية، ويبعد عن مكة حوالي 22 كيلومتراً. يقف الحجاج على جبل عرفة في اليوم التاسع من شهر ذي الحجة وهو أهم أركان الحج.</p>
+                  <p>قال النبي صلى الله عليه وسلم: "الحج عرفة"، مما يدل على أهمية الوقوف بعرفة في الحج. يبدأ وقت الوقوف بعرفة من زوال شمس يوم عرفة إلى طلوع فجر يوم النحر.</p>
+                  <h4>أهمية جبل عرفة:</h4>
+                  <ul>
+                    <li>الوقوف بعرفة هو الركن الأعظم للحج</li>
+                    <li>مكان نزول الوحي على النبي صلى الله عليه وسلم</li>
+                    <li>مكان استجابة الدعاء</li>
+                    <li>مكان مغفرة الذنوب والعتق من النار</li>
+                    <li>ذكرى لقاء آدم وحواء بعد نزولهما من الجنة</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item animate__animated animate__fadeInUp animate__delay-3s">
+          <div class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              الحرم المكي الشريف
+            </button>
+          </div>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
+            <div class="accordion-body">
+              <div class="accordion-content">
+                <img src="static/images/haram.jfif" alt="الحرم المكي" class="accordion-image">
+                <div class="accordion-details">
+                  <h3>الحرم المكي الشريف</h3>
+                  <p>الحرم المكي هو أعظم مسجد في الإسلام، ويقع في قلب مكة المكرمة في المملكة العربية السعودية. يتوسطه الكعبة المشرفة، قبلة المسلمين في صلاتهم. تبلغ مساحة الحرم المكي حالياً 356,800 متر مربع.</p>
+                  <p>يستطيع الحرم المكي استيعاب أكثر من مليوني مصلٍ في وقت واحد. يحتوي الحرم على العديد من المعالم الإسلامية الهامة مثل مقام إبراهيم، وحجر إسماعيل، وبئر زمزم.</p>
+                  <h4>معالم الحرم المكي:</h4>
+                  <ul>
+                    <li>الكعبة المشرفة</li>
+                    <li>مقام إبراهيم</li>
+                    <li>حجر إسماعيل</li>
+                    <li>بئر زمزم</li>
+                    <li>الصفا والمروة</li>
+                    <li>الحجر الأسود</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <div class="map-container">
+      <h2 class="map-title animate__animated animate__fadeIn">خريطة المواقع الإسلامية</h2>
+      
+      <div class="map-wrapper animate__animated animate__fadeIn">
+        <div id="holySitesMap"></div>
+      </div>
+      
+      <div class="map-legend animate__animated animate__fadeInUp">
+        <div class="map-legend-item">
+          <span>مكة المكرمة</span>
+          <div class="map-legend-color" style="background-color: #e74c3c;"></div>
+        </div>
+        <div class="map-legend-item">
+          <span>المدينة المنورة</span>
+          <div class="map-legend-color" style="background-color: #3498db;"></div>
+        </div>
+        <div class="map-legend-item">
+          <span>جبل عرفة</span>
+          <div class="map-legend-color" style="background-color: #2ecc71;"></div>
+        </div>
+        <div class="map-legend-item">
+          <span>منى</span>
+          <div class="map-legend-color" style="background-color: #f39c12;"></div>
+        </div>
+        <div class="map-legend-item">
+          <span>مزدلفة</span>
+          <div class="map-legend-color" style="background-color: #9b59b6;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  
+  <script src="static/js/index.js"></script>
+</body>
+</html>

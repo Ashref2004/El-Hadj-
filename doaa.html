@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="أدعية الحج والعمرة - مجموعة مميزة من الأدعية النبوية لمناسك الحج والعمرة">
+  <meta name="keywords" content="أدعية الحج, أدعية العمرة, أذكار الحج, أدعية مكة, أدعية المسجد النبوي">
+  <meta name="author" content="بوابة الحج والعمرة">
+  
+  <link rel="icon" type="image/png" href="images/kaaba-icon.png">
+  
+  <title>بوابة الحج والعمرة | أدعية الحج والعمرة</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lateef:wght@400;700&family=Scheherazade+New:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="static/css/doaa.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="logo-container">
+          <span class="logo-icon floating">🕋</span>
+        </span>
+        بوابة الحج والعمرة
+      </a>
+      
+      <div class="prayer-times d-none d-xl-flex">
+        <div class="prayer-time">
+          <span>الفجر</span>
+          <span id="salat-fajr">4:30 ص</span>
+        </div>
+        <div class="prayer-time">
+          <span>الظهر</span>
+          <span id="salat-dhuhr">12:15 م</span>
+        </div>
+        <div class="prayer-time">
+          <span>العصر</span>
+          <span id="salat-asr">3:45 م</span>
+        </div>
+        <div class="prayer-time">
+          <span>المغرب</span>
+          <span id="salat-maghrib">6:30 م</span>
+        </div>
+        <div class="prayer-time">
+          <span>العشاء</span>
+          <span id="salat-isha">8:00 م</span>
+        </div>
+      </div>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHajj" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-kaaba"></i> الحج
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownHajj">
+              <li><a class="dropdown-item" href="hajj.html"><i class="fas fa-info-circle me-2"></i>مقدمة عن الحج</a></li>
+              <li><a class="dropdown-item" href="hajj-steps.html"><i class="fas fa-list-ol me-2"></i>مناسك الحج خطوة بخطوة</a></li>
+              <li><a class="dropdown-item" href="hajj-tips.html"><i class="fas fa-lightbulb me-2"></i>نصائح للحجاج</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="hajj-videos.html"><i class="fas fa-video me-2"></i>فيديو تعليمي</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUmrah" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-mosque"></i> العمرة
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownUmrah">
+              <li><a class="dropdown-item" href="umrah.html"><i class="fas fa-info-circle me-2"></i>مقدمة عن العمرة</a></li>
+              <li><a class="dropdown-item" href="umrah-steps.html"><i class="fas fa-list-ol me-2"></i>مناسك العمرة خطوة بخطوة</a></li>
+              <li><a class="dropdown-item" href="umrah-tips.html"><i class="fas fa-lightbulb me-2"></i>نصائح للمعتمرين</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownDuas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-hands-praying"></i> أدعية
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownDuas">
+              <li><a class="dropdown-item" href="duas.html"><i class="fas fa-kaaba me-2"></i>أدعية الحج والعمرة</a></li>
+              <li><a class="dropdown-item" href="duas-masjid.html"><i class="fas fa-mosque me-2"></i>أدعية المسجد الحرام</a></li>
+              <li><a class="dropdown-item" href="duas-nabawi.html"><i class="fas fa-mosque me-2"></i>أدعية المسجد النبوي</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="duas-azkar.html"><i class="fas fa-praying-hands me-2"></i>أذكار الحج والعمرة</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-section">
+    <div class="hero-text container">
+      <h1 class="mb-4 animate__animated animate__fadeInUp">أدعية الحج والعمرة</h1>
+      <p class="lead mb-5 animate__animated animate__fadeInUp animate__delay-1s">مجموعة مميزة من الأدعية النبوية والأذكار الخاصة بالحج والعمرة</p>
+      
+      <div class="hero-search animate__animated animate__fadeInUp animate__delay-2s">
+        <form id="searchForm">
+          <input type="text" id="searchInput" placeholder="ابحث عن دعاء معين...">
+          <button type="submit"><i class="fas fa-search me-2"></i>بحث</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <section class="duas-main">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="animate__animated animate__fadeInUp">تصنيفات الأدعية</h2>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">اختر من التصنيفات التالية للوصول إلى الأدعية المطلوبة</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4 animate__animated animate__fadeInUp">
+          <div class="category-card">
+            <div class="category-icon"><i class="fas fa-suitcase-rolling"></i></div>
+            <div class="category-title">أدعية السفر</div>
+            <div class="category-desc">أدعية السفر إلى الحج والعمرة وما يقال عند ركوب المركبة والخروج من المنزل</div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="category-card">
+            <div class="category-icon"><i class="fas fa-kaaba"></i></div>
+            <div class="category-title">أدعية الإحرام</div>
+            <div class="category-desc">أدعية الإحرام والتلبية وما يقال عند دخول مكة ورؤية الكعبة</div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="category-card">
+            <div class="category-icon"><i class="fas fa-people-arrows"></i></div>
+            <div class="category-title">أدعية الطواف</div>
+            <div class="category-desc">أدعية الطواف حول الكعبة وما يقال بين الركن اليماني والحجر الأسود</div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp">
+          <div class="category-card">
+            <div class="category-icon"><i class="fas fa-mountain"></i></div>
+            <div class="category-title">أدعية عرفات</div>
+            <div class="category-desc">أدعية يوم عرفة وما يقال في الوقوف بعرفة وأفضل الأدعية المستجابة</div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="category-card">
+            <div class="category-icon"><i class="fas fa-water"></i></div>
+            <div class="category-title">أدعية زمزم</div>
+            <div class="category-desc">أدعية شرب ماء زمزم وما يقال عند الشرب منه والدعاء عند المقام</div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="category-card">
+            <div class="category-icon"><i class="fas fa-star-and-crescent"></i></div>
+            <div class="category-title">أدعية عامة</div>
+            <div class="category-desc">أدعية وأذكار عامة تقال أثناء الحج والعمرة وفي الأماكن المقدسة</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section-header mt-5">
+        <h2 class="animate__animated animate__fadeInUp">الأدعية النبوية</h2>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">مجموعة منتقاة من الأدعية الصحيحة عن النبي صلى الله عليه وسلم</p>
+      </div>
+      
+      <div class="accordion" id="duasAccordion">
+        <div class="accordion-item animate__animated animate__fadeInUp">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <i class="fas fa-suitcase-rolling me-3"></i> أدعية السفر إلى الحج والعمرة
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#duasAccordion">
+            <div class="accordion-body">
+              <div class="dua-container" data-keywords="سفر, سفر الحج, سفر العمرة, دعاء السفر, ركوب, مركبة, خروج, منزل">
+                <div class="dua-text">
+                  سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ
+                </div>
+                <div class="dua-reference">(سورة الزخرف: 13)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="سفر, دعاء السفر, الحج, العمرة, تيسير, بر, تقوى, عمل صالح">
+                <div class="dua-text">
+                  اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى، وَمِنَ الْعَمَلِ مَا تَرْضَى، اللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَذَا، وَاطْوِ عَنَّا بُعْدَهُ، اللَّهُمَّ أَنْتَ الصَّاحِبُ فِي السَّفَرِ، وَالْخَلِيفَةُ فِي الأَهْلِ، اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ وَعْثَاءِ السَّفَرِ، وَكَآبَةِ الْمَنْظَرِ، وَسُوءِ الْمُنْقَلَبِ فِي الْمَالِ وَالأَهْلِ
+                </div>
+                <div class="dua-reference">(رواه مسلم)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="سفر, دعاء السفر, حركة, تنقل, حماية, أمان">
+                <div class="dua-text">
+                  اللَّهُمَّ بِكَ أَصُولُ، وَبِكَ أَجُولُ، وَبِكَ أَسِيرُ
+                </div>
+                <div class="dua-reference">(رواه الترمذي)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item animate__animated animate__fadeInUp animate__delay-1s">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <i class="fas fa-kaaba me-3"></i> أدعية الإحرام والتلبية
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#duasAccordion">
+            <div class="accordion-body">
+              <div class="dua-container" data-keywords="إحرام, تلبية, حج, عمرة, لبيك, دعاء الإحرام">
+                <div class="dua-text">
+                  لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لاَ شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لاَ شَرِيكَ لَكَ
+                </div>
+                <div class="dua-reference">(متفق عليه)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="إحرام, عمرة, تيسير, قبول, مغفرة, دعاء الإحرام">
+                <div class="dua-text">
+                  اللَّهُمَّ إِنِّي أُرِيدُ الْعُمْرَةَ فَيَسِّرْهَا لِي وَتَقَبَّلْهَا مِنِّي، وَاجْعَلْهَا مَبْرُورَةً مَقْبُولَةً، وَذَنْبِي مَغْفُورًا
+                </div>
+                <div class="dua-reference">(دعاء الإحرام)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="حرم, أمن, حماية, نار, عذاب, دعاء الدخول">
+                <div class="dua-text">
+                  اللَّهُمَّ هَذَا حَرَمُكَ وَأَمْنُكَ، فَحَرِّمْ لَحْمِي وَدَمِي وَشَعْرِي وَبَشَرِي عَلَى النَّارِ، وَأَمِنِّي مِنْ عَذَابِكَ يَوْمَ تَبْعَثُ عِبَادَكَ
+                </div>
+                <div class="dua-reference">(رواه أحمد)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item animate__animated animate__fadeInUp animate__delay-2s">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <i class="fas fa-people-arrows me-3"></i> أدعية الطواف حول الكعبة
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#duasAccordion">
+            <div class="accordion-body">
+              <div class="dua-container" data-keywords="طواف, كعبة, أذكار, تسبيح, تحميد, تهليل, تكبير">
+                <div class="dua-text">
+                  سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلاَ إِلَهَ إِلاَّ اللَّهُ وَاللَّهُ أَكْبَرُ وَلاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ
+                </div>
+                <div class="dua-reference">(يقال أثناء الطواف)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="دعاء, حسنات, دنيا, آخرة, وقاية, نار">
+                <div class="dua-text">
+                  رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ
+                </div>
+                <div class="dua-reference">(سورة البقرة: 201)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="بيت, حرم, أمن, عياذ, نار, مقام">
+                <div class="dua-text">
+                  اللَّهُمَّ إِنَّ الْبَيْتَ بَيْتُكَ، وَالْحَرَمَ حَرَمُكَ، وَالأَمْنَ أَمْنُكَ، وَهَذَا مَقَامُ الْعَائِذِ بِكَ مِنَ النَّارِ
+                </div>
+                <div class="dua-reference">(رواه الحاكم)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item animate__animated animate__fadeInUp">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              <i class="fas fa-mountain me-3"></i> أدعية يوم عرفة
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#duasAccordion">
+            <div class="accordion-body">
+              <div class="dua-container" data-keywords="عرفة, توحيد, إله, واحد, لا شريك, ملك, حمد">
+                <div class="dua-text">
+                  لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ
+                </div>
+                <div class="dua-reference">(خير الدعاء يوم عرفة)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="حمد, صلاة, نسك, حياة, موت, عذاب, قبر, وسوسة">
+                <div class="dua-text">
+                  اللَّهُمَّ لَكَ الْحَمْدُ كَالَّذِي نَقُولُ وَخَيْرًا مِمَّا نَقُولُ، اللَّهُمَّ لَكَ صَلاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي، وَإِلَيْكَ مَآبِي، وَإِيَّاكَ نَ
+                </div>
+                <div class="dua-reference">(رواه الترمذي)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="ظلم, نفس, مغفرة, غفور, رحيم, عفو, توبة">
+                <div class="dua-text">
+                  اللَّهُمَّ إِنِّي ظَلَمْتُ نَفْسِي ظُلْمًا كَثِيرًا، وَلاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ، فَاغْفِرْ لِي مَغْفِرَةً مِنْ عِنْدِكَ، وَارْحَمْنِي إِنَّكَ أَنْتَ الْغَفُورُ الرَّحِيمُ
+                </div>
+                <div class="dua-reference">(متفق عليه)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="download-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-white animate__animated animate__fadeInUp">تنزيل أدعية الحج والعمرة</h2>
+        <p class="text-white animate__animated animate__fadeInUp animate__delay-1s">يمكنك تحميل مجموعة الأدعية كملف PDF للاستفادة منها أثناء الحج أو العمرة</p>
+      </div>
+      
+      <div class="row justify-content-center">
+        <div class="col-md-6 animate__animated animate__fadeInUp">
+          <div class="download-card">
+            <i class="fas fa-file-pdf fa-3x mb-3" style="color: #c6a664;"></i>
+            <h3 class="mb-3">كتيب الأدعية النبوية</h3>
+            <p>تحميل كتيب يحتوي على جميع أدعية الحج والعمرة مع شرحها وتخريجها بصيغة PDF</p>
+            <button class="download-btn"><i class="fas fa-download"></i> تحميل الملف</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="#" class="back-to-top animate__animated animate__fadeIn"><i class="fas fa-arrow-up"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script src="static/js/doaa.js"></script>
+</body>
+</html> 
